@@ -2,6 +2,8 @@
 
 Backend Api for Moo using Nest Framework (Node + TypeScript + PostgreSQL)
 
+![example branch parameter](https://github.com/jaypatel-24/twitter-backend/actions/workflows/nodejs.yml/badge.svg?branch=main)
+
 ## Installation
 
 ```bash
