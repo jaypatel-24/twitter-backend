@@ -36,6 +36,14 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## setup database
+
+```
+create database twitter_backend;
+create user twitteradmin with encrypted password twitteradmin;
+grant all privileges on database twitter_backend to twitteradmin;
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
