@@ -1,10 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { twitterBaseEntity } from 'src/commons/base.entity';
+import { Entity, Column } from 'typeorm';
 
 @Entity('users')
-export class UserEntity {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
+export class UserEntity extends twitterBaseEntity {
   @Column({ length: 30, nullable: false, unique: true })
   username: string;
 
