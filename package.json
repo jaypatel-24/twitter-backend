@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "project2",
-=======
   "name": "twitter-backend",
->>>>>>> b6cbc58db4a2cd15b6d665f8f3f25143e1d78644
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -27,7 +23,6 @@
   "dependencies": {
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
-<<<<<<< HEAD
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.6.15",
     "@nestjs/typeorm": "^7.1.5",
@@ -39,12 +34,6 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6",
     "typeorm": "^0.2.34"
-=======
-    "@nestjs/platform-express": "^7.6.15",
-    "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6"
->>>>>>> b6cbc58db4a2cd15b6d665f8f3f25143e1d78644
   },
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",
@@ -53,10 +42,7 @@
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.36",
-<<<<<<< HEAD
     "@types/passport-local": "^1.0.33",
-=======
->>>>>>> b6cbc58db4a2cd15b6d665f8f3f25143e1d78644
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",

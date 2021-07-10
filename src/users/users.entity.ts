@@ -11,7 +11,6 @@ export class UserEntity {
   @Column({ length: 50 })
   name: string;
 
-  @Column()
   avatar: string;
 
   @Column({ length: 240 })
@@ -23,6 +22,6 @@ export class UserEntity {
   @Column({ name: 'followee_count', default: 0 })
   followeeCount: number;
 
-  @Column('boolean')
+  @Column('boolean', { default: false })
   verified: boolean;
 }

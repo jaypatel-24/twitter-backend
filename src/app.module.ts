@@ -12,7 +12,7 @@ import { UserEntity } from './users/users.entity';
       username: 'twitteradmin',
       password: 'twitteradmin',
       database: 'twitter_backend',
-      synchronize: false,
+      synchronize: true,
       logger: 'advanced-console',
       logging: true,
       entities: [UserEntity],
