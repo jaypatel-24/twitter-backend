@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppRepository } from './app.repository';
 import { AppService } from './app.service';
+import { UserEntity } from './users/users.entity';
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { AppService } from './app.service';
       synchronize: false,
       logger: 'advanced-console',
       logging: true,
-      entities: [],
+      entities: [UserEntity],
     }),
 
     TypeOrmModule.forFeature([]),
