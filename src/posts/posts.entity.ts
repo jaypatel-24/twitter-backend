@@ -1,5 +1,6 @@
 import { twitterBaseEntity } from 'src/commons/base.entity';
-import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
+import { UserEntity } from 'src/users/users.entity';
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne } from 'typeorm';
 
 @Entity('posts')
 export class PostEntity extends twitterBaseEntity {
@@ -8,6 +9,10 @@ export class PostEntity extends twitterBaseEntity {
 
   @Column('json', { default: [] })
   images: Array<string>;
+
+  @ManyToOne(() => UserEntity)
+  @JoinColumn({ name: 'author_id' })
+  authorId: UserEntity;
 
   @Column({ name: 'like_count', default: 0 })
   likecount: number;

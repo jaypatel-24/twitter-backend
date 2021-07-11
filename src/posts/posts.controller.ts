@@ -8,27 +8,27 @@ export class PostsController {
   }
 
   @Get('/:postId')
-  getPostDetails(@Param() param): string {
-    return `get post with postId = ${param.postId}`;
+  getPostDetails(@Param('postId') postId): string {
+    return `get post with postId = ${postId}`;
   }
 
-  @Post('')
+  @Post()
   createNewPost(): string {
     return 'new post created';
   }
 
   @Delete('/:postId')
-  deletePost(@Param() param): string {
-    return `delete post with post id = ${param.postId}`;
+  deletePost(@Param('postId') postId: string): string {
+    return `delete post with post id = ${postId}`;
   }
 
   @Put(':postId/like')
-  likePost(@Param() param): string {
-    return `like post with id = ${param.postId}`;
+  likePost(@Param('postId') postId: string): string {
+    return `like post with id = ${postId}`;
   }
 
   @Delete(':postId/like')
-  unlikePost(@Param() param): string {
-    return `unlike post with id = ${param.postId}`;
+  unlikePost(@Param('postId') postId: string): string {
+    return `unlike post with id = ${postId}`;
   }
 }

@@ -1,5 +1,4 @@
 import {
-  Body,
   Controller,
   Delete,
   Get,
@@ -12,13 +11,13 @@ import {
 @Controller('users')
 export class UsersController {
   @Get('/@:username')
-  getUserByUSerName(@Param() param): string {
-    return `the username is ${param.username}`;
+  getUserByUSerName(@Param('username') username): string {
+    return `the username is ${username}`;
   }
 
   @Get('/:userId')
-  getUserByUserId(@Param() param): string {
-    return `the userId is = ${param.userId}`;
+  getUserByUserId(@Param('userId') userId: string): string {
+    return `the userId is = ${userId}`;
   }
 
   @Post()
@@ -27,18 +26,18 @@ export class UsersController {
   }
 
   @Patch('/:userId')
-  updateUserByUserId(): string {
-    return 'update user by userId';
+  updateUserByUserId(@Param('userId') userId: string): string {
+    return `update user by ${userId}`;
   }
 
   @Put('/:userId/follow')
-  followUser(): string {
-    return 'you followed user';
+  followUser(@Param('userId') userId: string): string {
+    return `you followed ${userId}`;
   }
 
   @Delete('/:userId/follow')
-  unfollowUser(): string {
-    return 'you un-followed user';
+  unfollowUser(@Param('userId') userId: string): string {
+    return `you un-followed ${userId}`;
   }
 
   @Get('{userid}/followers')

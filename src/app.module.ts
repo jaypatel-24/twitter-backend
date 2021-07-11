@@ -3,7 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppRepository } from './app.repository';
 import { AppService } from './app.service';
+import { HashtagsController } from './hashtags/hashtags.controller';
+import { PostsController } from './posts/posts.controller';
 import { PostEntity } from './posts/posts.entity';
+import { UsersController } from './users/users.controller';
 import { UserEntity } from './users/users.entity';
 
 @Module({
@@ -21,7 +24,12 @@ import { UserEntity } from './users/users.entity';
 
     TypeOrmModule.forFeature([]),
   ],
-  controllers: [AppController],
-  providers: [AppService, AppRepository],
+  controllers: [
+    AppController,
+    UsersController,
+    PostsController,
+    HashtagsController,
+  ],
+  providers: [AppService],
 })
 export class AppModule {}
