@@ -1,13 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
-import { AppRepository } from './app.repository';
 import { AppService } from './app.service';
 import { HashtagsController } from './hashtags/hashtags.controller';
 import { PostsController } from './posts/posts.controller';
 import { PostEntity } from './posts/posts.entity';
-import { UsersController } from './users/users.controller';
 import { UserEntity } from './users/users.entity';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -23,13 +22,10 @@ import { UserEntity } from './users/users.entity';
     }),
 
     TypeOrmModule.forFeature([]),
+
+    UsersModule,
   ],
-  controllers: [
-    AppController,
-    UsersController,
-    PostsController,
-    HashtagsController,
-  ],
+  controllers: [AppController, PostsController, HashtagsController],
   providers: [AppService],
 })
 export class AppModule {}
