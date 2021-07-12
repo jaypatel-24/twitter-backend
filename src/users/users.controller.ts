@@ -1,3 +1,4 @@
+import { Body } from '@nestjs/common';
 import {
   Controller,
   Delete,
@@ -8,6 +9,9 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { CreateUserDto } from './dto/createUserDto.dto';
+import { UpdateUserDto } from './dto/updateUserDto.dto';
+
 import { UserEntity } from './users.entity';
 import { UsersService } from './users.service';
 
@@ -17,7 +21,7 @@ export class UsersController {
 
   @Get('/@:username')
   async getUserByUSerName(@Param('username') username): Promise<UserEntity> {
-    const user = await this.usersService.getUserByUSerName(username);
+    const user = await this.usersService.getUserByUserName(username);
     if (!user) {
       throw new NotFoundException('User not found');
     }
@@ -26,18 +30,29 @@ export class UsersController {
   }
 
   @Get('/:userId')
-  getUserByUserId(@Param('userId') userId: string): string {
-    return `the userId is = ${userId}`;
+  async getUserByUserId(@Param('userId') userId: string): Promise<any> {
+    const user = await this.usersService.getUserByUserId(userId);
+    if (!user) {
+      throw new NotFoundException('User Not Found');
+    }
+    return user;
   }
 
   @Post()
-  createNewUser(): string {
-    return 'create user';
+  async createNewUser(
+    @Body() createUserDto: CreateUserDto,
+  ): Promise<UserEntity> {
+    const user = await this.usersService.createUser(createUserDto);
+    return user;
   }
 
   @Patch('/:userId')
-  updateUserByUserId(@Param('userId') userId: string): string {
-    return `update user by ${userId}`;
+  async updateUserByUserId(
+    @Param('userId') userId: string,
+    @Body() updateUserDto: UpdateUserDto,
+  ): Promise<UserEntity> {
+    const user = await this.usersService.updateUser(userId, updateUserDto);
+    return user;
   }
 
   @Put('/:userId/follow')
