@@ -1,4 +1,4 @@
-# Moo - A twitter clone
+# twitter-backend : A twitter clone
 
 Backend Api for Moo using Nest Framework (Node + TypeScript + PostgreSQL)
 
